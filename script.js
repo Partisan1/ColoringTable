@@ -6,9 +6,26 @@ for(let i = 0; i < 64; i++){
 
 //NodeListként megkapjuk a .box-okat
 const boxes = document.querySelectorAll(".box");
+
+
 boxes.forEach(element => {
     element.addEventListener("click", (event) => {
+        console.log(event);
+        let currentElement = event.target;
+        if(currentElement.style.backgroundColor === ""){
+            currentElement.style.backgroundColor = "#ff0000";
+            currentElement.textContent = currentElement.id;
 
-        event.target.style.backgroundColor = "#ff0000";
+        }else{
+            currentElement.style.backgroundColor = "";
+            currentElement.textContent = null;
+        }
+
+        //currentElement.style.backgroundColor = "#ff0000";
+        currentElement.style.textAlign = "center";
+        
     })
 })
+
+
+
